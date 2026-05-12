@@ -68,7 +68,7 @@ The final result is saved to a single `output.json` file as a list containing th
 ### 1. Clone the repository
 
 ```bash
-git clone <your-repo-url>
+git clone git@github.com:morsegupta/Synapx-Agent.git
 cd <repo-folder>
 ```
 
@@ -89,7 +89,7 @@ pip install pymupdf pydantic litellm
 Open `agent.py` in your text editor. Around line 185, you will find this section:
 
 ```python
-    API_KEY = "YOUR_API_KEY_HERE"
+    API_KEY = "YOUR_API_KEY_HERE" #Enter Your Gemini API Key here
 ```
 
 Replace `"YOUR_API_KEY_HERE"` with your actual Gemini API key and save the file.
