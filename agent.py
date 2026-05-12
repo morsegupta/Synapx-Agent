@@ -182,7 +182,7 @@ def process_single_file(file_path: str, model_name: str, api_key: str) -> dict:
 def main():
     folder = os.path.dirname(os.path.abspath(__file__))
 
-    API_KEY = "AIzaSyCt3j5qvPuGJ_8jNKqtC3Z3iE-h_ncUeaA"
+    API_KEY = " YOUR_API_KEY_HERE " #Enter Your Gemini API Key here
     model_name = "gemini/gemini-2.5-flash"
 
     if API_KEY == "YOUR_API_KEY_HERE" or not API_KEY:
@@ -192,10 +192,8 @@ def main():
     print("Welcome to the Insurance Claims Processing System!")
     print(f"Using model: {model_name}\n")
 
-    # Auto-discover all FNOL files in the same folder
     files = find_fnol_files(folder)
 
-    # Exclude output files and the script itself from being picked up
     excluded = {"output.json", "agent.py", "process_claim.py"}
     files = [f for f in files if os.path.basename(f) not in excluded]
 
@@ -207,7 +205,6 @@ def main():
     for f in files:
         print(f"  - {os.path.basename(f)}")
 
-    # Process each file
     all_results = []
     success_count = 0
     error_count = 0
@@ -223,11 +220,9 @@ def main():
             error_count += 1
             print(f"  ✗ Error: {result['error']}")
 
-    # Save combined output
     with open("output.json", "w") as f:
         json.dump(all_results, f, indent=4)
 
-    # Print summary
     print("\n" + "="*50)
     print("BATCH PROCESSING SUMMARY")
     print("="*50)
