@@ -49,8 +49,6 @@ The final result is saved to a single `output.json` file as a list containing th
 ```text
 .
 ├── agent.py                                # Main batch processing script
-├── Automobile Loss Notice Dec 5 2016.pdf   # Sample FNOL document (add more here)
-├── output.json                             # Generated batch results
 └── README.md
 ```
 
